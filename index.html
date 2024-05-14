@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <div id="app">
+      <canvas id="img"></canvas>
+      <div>
+        <label>
+          width:
+          <input type="number" id="width">
+        </label>
+        <label>
+          height:
+          <input type="number" id="height">
+        </label>
+        <br />
+        <label>
+          format
+          <select id="format">
+            <option>Select a format</option>
+            <option>New...</option>
+          </select>
+        </label>
+        <label>
+          <input type="file" id="file">
+        </label>
+        <textarea title="code" placeholder="code..." id="code"></textarea>
+      </div>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
