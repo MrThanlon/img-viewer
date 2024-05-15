@@ -1,3 +1,5 @@
+precision highp float;
+
 varying highp vec2 coord;
 
 void main() {

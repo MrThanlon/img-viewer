@@ -14,8 +14,12 @@ export function compile(gl, source) {
     gl.compileShader(vs)
     gl.attachShader(program, vs)
     const fs = gl.createShader(gl.FRAGMENT_SHADER)
+    console.log(fss + source)
     gl.shaderSource(fs, fss + source)
     gl.compileShader(fs)
+    if (!gl.getShaderParameter(fs, gl.COMPILE_STATUS)) {
+        throw "Could not compile WebGL program. \n\n" + gl.getShaderInfoLog(fs)
+    }
     gl.attachShader(program, fs)
     gl.linkProgram(program)
     gl.useProgram(program)

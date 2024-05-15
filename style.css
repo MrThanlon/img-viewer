@@ -45,6 +45,7 @@ h1 {
 }
 
 #img {
+  width: 100%;
   border: solid 1px white;
 }
 

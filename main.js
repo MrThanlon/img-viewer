@@ -1,5 +1,6 @@
 import './style.css'
 import { compile, buffer, render } from './webgl'
+import yuv420sp from './formats/yuv420sp.glsl?raw'
 
 const code = document.getElementById('code')
 const width = document.getElementById('width')
@@ -15,6 +16,6 @@ fileElement?.addEventListener('change', event => {
 })
 
 const gl = canvas.getContext('webgl')
-const program = compile(gl, '')
+const program = compile(gl, yuv420sp)
 buffer(gl, program)
 render(gl)
