@@ -18,6 +18,5 @@ export function draw(ctx, data, color) {
         }
     }
     const img = new ImageData(imgData, w, h)
-    console.debug(img)
     ctx.putImageData(img, 0, 0)
 }
