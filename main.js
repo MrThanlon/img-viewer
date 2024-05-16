@@ -1,6 +1,5 @@
 import './style.css'
-import { compile, buffer, render } from './webgl'
-import yuv420sp from './formats/yuv420sp.glsl?raw'
+import { draw } from './2d'
 
 const code = document.getElementById('code')
 const width = document.getElementById('width')
@@ -15,7 +14,11 @@ fileElement?.addEventListener('change', event => {
     console.log(file)
 })
 
-const gl = canvas.getContext('webgl')
-const program = compile(gl, yuv420sp)
-buffer(gl, program)
-render(gl)
+const ctx = canvas.getContext('2d')
+draw(ctx, new Uint8Array(0), (x, y, w, h, d) => {
+    return [
+        x / w * 255,
+        y / h * 255,
+        0
+    ]
+})
